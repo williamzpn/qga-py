@@ -10,14 +10,6 @@ update the distributions toward better solutions.
 
 ## Installation
 
-For local development:
-
-```bash
-pip install -e ".[dev]"
-```
-
-After publishing:
-
 ```bash
 pip install qga-py
 ```
