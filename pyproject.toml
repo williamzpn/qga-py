@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qga-py"
+version = "0.1.0"
+description = "Quantum-inspired genetic and evolutionary algorithms for combinatorial optimization."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+  {name = "William Zhang"}
+]
+dependencies = [
+  "numpy>=1.22"
+]
+
+[project.optional-dependencies]
+dev = [
+  "build",
+  "pytest",
+  "twine"
+]
+
+[project.urls]
+Homepage = "https://github.com/williamzpn/qga-py"
+Repository = "https://github.com/williamzpn/qga-py"
+Issues = "https://github.com/williamzpn/qga-py/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
