@@ -12,6 +12,28 @@ license = "MIT"
 authors = [
   {name = "William Zhang"}
 ]
+keywords = [
+  "genetic algorithm",
+  "optimization",
+  "quantum-inspired",
+  "qga",
+  "qea",
+  "tsp"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
 dependencies = [
   "numpy>=1.22"
 ]
