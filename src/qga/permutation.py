@@ -18,18 +18,18 @@ class PermutationQGA:
 
     def __init__(
         self,
-        n_items: int,
-        population_size: int,
-        generations: int,
-        fitness_func: Callable[[np.ndarray, Any], float],
-        fitness_inputs: Any = None,
-        theta_start: float = np.pi * 0.05,
+        n_items: int, #scan lines
+        population_size: int, # of candidate solutions per generation
+        generations: int, # of iterations to run
+        fitness_func: Callable[[np.ndarray, Any], float],# function to evaluate solution quality, takes a permutation and optional inputs
+        fitness_inputs: Any = None,# additional data passed to fitness_func, e.g. distance matrix for TSP
+        theta_start: float = np.pi * 0.05,# initial value for the angle parameter
         theta_end: float = np.pi * 0.025,
         mutation_rate_start: float | None = None,
         mutation_rate_end: float | None = None,
         seed: int | None = None,
-        maximize: bool = True,
-        verbose: bool = False,
+        maximize: bool = True,# maximize the fitness function
+        verbose: bool = False,# print progress every 50 generations
     ) -> None:
         if n_items <= 1:
             raise ValueError("n_items must be greater than 1")
@@ -59,7 +59,8 @@ class PermutationQGA:
             (self.population_size, self.n_items, self.n_items),
             1.0 / self.n_items,
             dtype=float,
-        )
+        )# shape: (population_size, n_items, n_items) - for one candidate path, the first scanning position has equal probability for all items, the second position also has equal probability for all remaining items, etc.
+         #self.probs[0, 2, 5] = 0.4 第 0 个概率个体认为，第 3 个扫描位置有 40% 概率选择 item 5。
         self.best_solution: np.ndarray | None = None
         self.best_fitness = -np.inf if maximize else np.inf
 
